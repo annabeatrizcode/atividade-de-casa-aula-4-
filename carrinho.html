@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Pizza House</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>🍕 Pizza House</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>🛒 Seu Carrinho</h2>
+
+        <div id="carrinho">
+
+            <h3 id="sabor"></h3>
+
+            <p>
+                Tamanho:
+                <span id="tamanho"></span>
+            </p>
+
+            <p>
+                Quantidade:
+                <span id="quantidade"></span>
+            </p>
+
+            <br>
+
+            <a href="cardapio.html">
+                ← Continuar comprando
+            </a>
+
+            <br><br>
+
+            <a href="confirmacao.html">
+                Finalizar pedido →
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        const sabor = localStorage.getItem("sabor");
+        const tamanho = localStorage.getItem("tamanho");
+        const quantidade = localStorage.getItem("quantidade");
+
+        if (sabor) {
+
+            document.getElementById("sabor").textContent =
+                "🍕 " + sabor;
+
+            document.getElementById("tamanho").textContent =
+                tamanho;
+
+            document.getElementById("quantidade").textContent =
+                quantidade;
+
+        } else {
+
+            document.getElementById("carrinho").innerHTML =
+                "<p>Seu carrinho está vazio.</p>";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Pizza House</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>🍕 Pizza House</h1>
+    </header>
+
+    <main>
+
+        <h2>Pagamento e Entrega</h2>
+
+        <!-- Formulário que envia os dados para uma página de sucesso -->
+        <form action="sucesso.html" method="GET">
+
+            <h3>Dados de Entrega</h3>
+
+            <label for="nome">Seu Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="endereco">Endereço:</label><br>
+            <input type="text" id="endereco" name="endereco" required><br><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" required><br><br>
+
+            <h3>Forma de Pagamento</h3>
+
+            <label for="pagamento">Escolha como vai pagar:</label><br>
+            <select id="pagamento" name="pagamento">
+                <option value="pix">PIX</option>
+                <option value="cartao">Cartão na entrega</option>
+                <option value="dinheiro">Dinheiro</option>
+            </select>
+
+            <br><br>
+
+            <label for="observacao">Observações / Troco:</label><br>
+            <textarea id="observacao" name="observacao" rows="3" placeholder="Ex: Preciso de troco para R$ 50"></textarea>
+
+            <br><br>
+
+            <a href="cardapio.html">← Voltar ao cardápio</a>
+
+            <br><br>
+
+            <!-- O botão type="submit" envia o formulário direto no HTML -->
+            <button type="submit">Concluir Pedido 🎉</button>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
