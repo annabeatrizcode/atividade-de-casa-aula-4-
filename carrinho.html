@@ -10,6 +10,7 @@
 <body>
 
     <header>
+
         <h1>🍕 Pizza House</h1>
 
         <nav>
@@ -17,23 +18,24 @@
             <a href="cardapio.html">Cardápio</a>
             <a href="carrinho.html">Carrinho</a>
         </nav>
+
     </header>
 
     <main>
 
         <h2>🛒 Seu Carrinho</h2>
 
-        <div id="carrinho">
+        <div id="pedido">
 
             <h3 id="sabor"></h3>
 
             <p>
-                Tamanho:
+                <strong>Tamanho:</strong>
                 <span id="tamanho"></span>
             </p>
 
             <p>
-                Quantidade:
+                <strong>Quantidade:</strong>
                 <span id="quantidade"></span>
             </p>
 
@@ -45,7 +47,7 @@
 
             <br><br>
 
-            <a href="confirmacao.html">
+            <a href="pagamento.html" id="finalizar">
                 Finalizar pedido →
             </a>
 
@@ -55,11 +57,15 @@
 
     <script>
 
-        const sabor = localStorage.getItem("sabor");
-        const tamanho = localStorage.getItem("tamanho");
-        const quantidade = localStorage.getItem("quantidade");
+        // Pega os dados enviados pelo pedido.html
+        const url = new URLSearchParams(window.location.search);
 
-        if (sabor) {
+        const sabor = url.get("sabor");
+        const tamanho = url.get("tamanho");
+        const quantidade = url.get("quantidade");
+
+        // Se existe um pedido
+        if (sabor && tamanho && quantidade) {
 
             document.getElementById("sabor").textContent =
                 "🍕 " + sabor;
@@ -70,10 +76,22 @@
             document.getElementById("quantidade").textContent =
                 quantidade;
 
+            // Envia os mesmos dados para o pagamento
+            document.getElementById("finalizar").href =
+                "pagamento.html?sabor=" +
+                encodeURIComponent(sabor) +
+                "&tamanho=" +
+                encodeURIComponent(tamanho) +
+                "&quantidade=" +
+                encodeURIComponent(quantidade);
+
         } else {
 
-            document.getElementById("carrinho").innerHTML =
-                "<p>Seu carrinho está vazio.</p>";
+            // Se não escolheu nada
+            document.getElementById("pedido").innerHTML =
+                "<p>🛒 Seu carrinho está vazio.</p>" +
+                "<br>" +
+                "<a href='cardapio.html'>Escolher uma pizza 🍕</a>";
 
         }
 
@@ -82,4 +100,3 @@
 </body>
 
 </html>
-

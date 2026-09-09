@@ -17,34 +17,67 @@
 
         <h2>Monte seu pedido</h2>
 
-        <!-- O formulário envia o usuário direto para a pagamento.html -->
-        <form action="pagamento.html" method="GET" class="formulario">
+        <form action="carrinho.html" method="GET">
 
             <h3>Pizza escolhida</h3>
 
-            <!-- Campo simples para escolher o sabor -->
             <label for="sabor">Sabor:</label>
+
             <select id="sabor" name="sabor">
+
                 <option value="Calabresa">Calabresa</option>
-                <option value="Mussarela">Mussarela</option>
-                <option value="Frango com Catupiry">Frango com Catupiry</option>
-                <option value="quatro queijos">quatro queijos</option>
-                <option value="Portuguesa">Portuguesa</option>
+
+                <option value="Frango com Catupiry">
+                    Frango com Catupiry
+                </option>
+
+                <option value="Quatro Queijos">
+                    Quatro Queijos
+                </option>
+
+                <option value="Marguerita">
+                    Marguerita
+                </option>
+
+                <option value="Portuguesa">
+                    Portuguesa
+                </option>
+
             </select>
 
             <br><br>
 
             <label for="tamanho">Tamanho:</label>
+
             <select id="tamanho" name="tamanho">
-                <option value="Pequeno">Pequeno</option>
-                <option value="Médio" selected>Médio</option>
-                <option value="Grande">Grande</option>
+
+                <option value="Pequeno">
+                    Pequeno
+                </option>
+
+                <option value="Médio" selected>
+                    Médio
+                </option>
+
+                <option value="Grande">
+                    Grande
+                </option>
+
             </select>
 
             <br><br>
 
-            <label for="quantidade">Quantidade:</label>
-            <input type="number" id="quantidade" name="quantidade" value="1" min="1">
+            <label for="quantidade">
+                Quantidade:
+            </label>
+
+            <input
+                type="number"
+                id="quantidade"
+                name="quantidade"
+                value="1"
+                min="1"
+            >
 
             <br><br>
 
@@ -54,14 +87,28 @@
 
             <br><br>
 
-            <!-- O botão type="submit" envia o formulário e abre a pagamento.html -->
             <button type="submit">
-                Ir para o Pagamento →
+                Ir para o Carrinho →
             </button>
 
         </form>
 
     </main>
+
+    <script>
+
+        // Pega o sabor escolhido no cardápio
+        const url = new URLSearchParams(window.location.search);
+
+        const saborEscolhido = url.get("sabor");
+
+        // Se veio um sabor do cardápio,
+        // seleciona ele automaticamente
+        if (saborEscolhido) {
+            document.getElementById("sabor").value = saborEscolhido;
+        }
+
+    </script>
 
 </body>
 
