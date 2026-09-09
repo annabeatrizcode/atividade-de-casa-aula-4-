@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,22 +26,38 @@
 
             <select id="sabor" name="sabor">
 
-                <option value="Calabresa">Calabresa</option>
+                <option value="🍕Calabresa">Calabresa</option>
 
                 <option value="Frango com Catupiry">
-                    Frango com Catupiry
+                   🍕 Frango com Catupiry
                 </option>
 
                 <option value="Quatro Queijos">
-                    Quatro Queijos
+                   🍕 Quatro Queijos
                 </option>
 
                 <option value="Marguerita">
-                    Marguerita
+                   🍕 Marguerita
                 </option>
 
                 <option value="Portuguesa">
-                    Portuguesa
+                   🍕 Portuguesa
+                </option>
+
+                <option value="Promoção 1">
+                    🍕 Promoção 1
+                </option>
+
+                <option value="Promoção 2">
+                    🍕 Promoção 2
+                </option>
+
+                <option value="Promoção 3">
+                    🍕 Promoção 3
+                </option>
+
+                <option value="Promoção 4">
+                    🍕 Promoção 4
                 </option>
 
             </select>
@@ -97,15 +114,19 @@
 
     <script>
 
-        // Pega o sabor escolhido no cardápio
+        // Pega os dados enviados pelo cardápio
         const url = new URLSearchParams(window.location.search);
 
         const saborEscolhido = url.get("sabor");
 
         // Se veio um sabor do cardápio,
-        // seleciona ele automaticamente
+        // seleciona automaticamente
         if (saborEscolhido) {
-            document.getElementById("sabor").value = saborEscolhido;
+
+            const selectSabor = document.getElementById("sabor");
+
+            selectSabor.value = saborEscolhido;
+
         }
 
     </script>
@@ -113,3 +134,4 @@
 </body>
 
 </html>
+```
