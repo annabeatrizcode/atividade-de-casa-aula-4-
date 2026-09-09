@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,7 +17,7 @@
 
         <h2>Monte seu pedido</h2>
 
-        <form action="carrinho.html" method="GET">
+        <form action="pagamento.html" method="GET">
 
             <h3>Pizza escolhida</h3>
 
@@ -26,39 +25,31 @@
 
             <select id="sabor" name="sabor">
 
-                <option value="🍕Calabresa">Calabresa</option>
+                <option value="Calabresa">Calabresa</option>
 
                 <option value="Frango com Catupiry">
-                   🍕 Frango com Catupiry
+                    Frango com Catupiry
                 </option>
 
                 <option value="Quatro Queijos">
-                   🍕 Quatro Queijos
+                    Quatro Queijos
                 </option>
 
                 <option value="Marguerita">
-                   🍕 Marguerita
+                    Marguerita
                 </option>
 
                 <option value="Portuguesa">
-                   🍕 Portuguesa
+                    Portuguesa
                 </option>
+                <option value="Promoção 1 "></option>
 
-                <option value="Promoção 1">
-                    🍕 Promoção 1
-                </option>
+                <option value="Promoção 2"></option>
 
-                <option value="Promoção 2">
-                    🍕 Promoção 2
-                </option>
+                <option value="promoção 3"></option>
 
-                <option value="Promoção 3">
-                    🍕 Promoção 3
-                </option>
-
-                <option value="Promoção 4">
-                    🍕 Promoção 4
-                </option>
+                <option value="promoção 4"></option>
+                
 
             </select>
 
@@ -105,7 +96,7 @@
             <br><br>
 
             <button type="submit">
-                Ir para o Carrinho →
+                Ir para o pagamento →
             </button>
 
         </form>
@@ -114,19 +105,15 @@
 
     <script>
 
-        // Pega os dados enviados pelo cardápio
+        // Pega o sabor escolhido no cardápio
         const url = new URLSearchParams(window.location.search);
 
         const saborEscolhido = url.get("sabor");
 
         // Se veio um sabor do cardápio,
-        // seleciona automaticamente
+        // seleciona ele automaticamente
         if (saborEscolhido) {
-
-            const selectSabor = document.getElementById("sabor");
-
-            selectSabor.value = saborEscolhido;
-
+            document.getElementById("sabor").value = saborEscolhido;
         }
 
     </script>
@@ -134,4 +121,3 @@
 </body>
 
 </html>
-```
